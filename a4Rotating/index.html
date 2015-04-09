@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>hello world</title>
+    <meta charset="utf-8">
+    <script src="./jquery.min.js"></script>
+    <style>
+        html {
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+            background-color: #1D2336;
+            background-image: url(http://www.psdgraphics.com/file/stars.jpg);
+        }
+        
+        .box {
+            background-color: lightgray;
+            letter-spacing: .1em;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            padding: 0 .5px;
+            display: block;
+            position: fixed;
+            top: 30vh;
+            left: 40vw;
+            box-shadow: 0px 10px 100px 20px lightgray;
+            border-top: solid grey 3px;
+            border-bottom: solid darkgray 3px;
+            border-radius: 50%;
+        }
+        
+        span {
+            color: #45aca4;
+            font-size: 20px;
+            text-align: center;
+            position: absolute;
+            top: 140px;
+            width: 100%;
+            padding: 0;
+        }
+    
+    </style>
+</head>
+
+<body>
+        <div class="box">
+        <h3>
+            <span></span>
+        </h3>
+        </div>
+<script>
+    $(document).ready(function () {
+        
+        var msg = ["hello world (english)", "bonjour monde (french)", "hola mundo (spanish)", "ciao mondo (italian)", "salut lume (romanian)", "helo byd (welsh)", "hallo welt (german)", "salve mundus (latin)", "hodie dunia (swahili)", "kon'nichiwa sekai (japanese)"];
+        $("span").text(msg[0]);
+        var index = 0;
+        $(document).keypress(function () {
+            index++;
+            console.log(index);
+            $("span").text(msg[index % 10]);
+
+        });
+
+
+
+    });
+</script>
+
+</html>
